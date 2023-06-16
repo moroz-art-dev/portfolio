@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "declaration-block-semicolon-newline-after": null,
+    "declaration-block-semicolon-newline-before": null,
+    "no-empty-source": true,
+    "order/properties-order": null,
+    "block-no-empty": true,
+    "selector-class-pattern": "^[a-zA-Z]+([a-zA-Z0-9-_]+)?$",
+    "media-feature-range-notation": "prefix",
+    "color-function-notation": "legacy",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  },
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": ["stylelint-order"]
+}
