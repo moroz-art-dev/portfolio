@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   Heading,
   HStack,
-  Image,
   Text,
   VStack,
   Link,
@@ -15,6 +14,8 @@ import {
   ModalCloseButton,
   Box,
 } from '@chakra-ui/react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const CertificateCard = ({ name, url, imageSrc, icon }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -35,8 +36,16 @@ const CertificateCard = ({ name, url, imageSrc, icon }) => {
       shadow='md'
       cursor='pointer'
       onClick={openModal}
+      _hover={{ opacity: 0.8 }}
     >
-      <Image src={imageSrc} alt={name} _hover={{ opacity: 0.8 }} />
+      <LazyLoadImage
+        src={imageSrc}
+        alt={name}
+        effect='blur'
+        onClick={openModal}
+        style={{ cursor: 'pointer' }}
+      />
+
       <VStack mt={4} alignItems='flex-start'>
         <Heading as='h2' size='md' color='gray.800'>
           {name}
@@ -57,7 +66,7 @@ const CertificateCard = ({ name, url, imageSrc, icon }) => {
           <ModalHeader>{name}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Image src={imageSrc} alt={name} />
+            <LazyLoadImage src={imageSrc} alt={name} />
           </ModalBody>
         </ModalContent>
       </Modal>
