@@ -16,6 +16,7 @@ import dataProjects from './data/projects';
 import dataCertificates from './data/certificates';
 import links from './data/links';
 import socials from './data/socials';
+import dataContacts from './data/contacts';
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const App = () => {
           <LandingSection data={dataLanding} />
           <ProjectsSection data={dataProjects} />
           <CertificatesSection data={dataCertificates} />
-          <ContactFormSection />
+          <ContactFormSection data={dataContacts} />
         </main>
         <Footer />
         <Alert />

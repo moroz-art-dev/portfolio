@@ -15,10 +15,8 @@ import {
   ModalCloseButton,
   Box,
 } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const CertificateCard = ({ name, url, imageSrc }) => {
+const CertificateCard = ({ name, url, imageSrc, icon }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => {
@@ -37,17 +35,18 @@ const CertificateCard = ({ name, url, imageSrc }) => {
       shadow='md'
       cursor='pointer'
       onClick={openModal}
-      _hover={{ opacity: 0.8 }}
     >
-      <Image src={imageSrc} alt={name} />
+      <Image src={imageSrc} alt={name} _hover={{ opacity: 0.8 }} />
       <VStack mt={4} alignItems='flex-start'>
         <Heading as='h2' size='md' color='gray.800'>
           {name}
         </Heading>
         <Link href={url} isExternal color='primary.20'>
-          <HStack spacing={2} align='left'>
-            <Text textAlign={['left', 'center']}>See more</Text>
-            <FontAwesomeIcon icon={faArrowRight} size='sm' />
+          <HStack spacing={2} align='center' justify='center'>
+            {icon}
+            <Text textAlign={['left', 'center']} fontWeight='bold'>
+              See more
+            </Text>
           </HStack>
         </Link>
       </VStack>
@@ -67,6 +66,7 @@ const CertificateCard = ({ name, url, imageSrc }) => {
 };
 
 CertificateCard.propTypes = {
+  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   imageSrc: PropTypes.string.isRequired,
