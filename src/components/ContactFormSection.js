@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import {
   Box,
@@ -14,7 +15,7 @@ import FullScreenSection from './FullScreenSection';
 import ContactForm from './ContactForm';
 import * as Yup from 'yup';
 
-const ContactFormSection = () => {
+const ContactFormSection = ({ data: { title } }) => {
   const { isLoading, response, submit } = useSubmit();
   const fields = [
     {
@@ -80,6 +81,12 @@ const ContactFormSection = () => {
     }
   }, [response]);
 
+  ContactFormSection.propTypes = {
+    data: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+    }).isRequired,
+  };
+
   return (
     <FullScreenSection
       isDarkBackground
@@ -89,7 +96,7 @@ const ContactFormSection = () => {
     >
       <VStack w='1024px' p={32} alignItems='flex-start'>
         <Heading as='h1' id='contact-section'>
-          Contact me (Demo)
+          {title}
         </Heading>
         <Box rounded='md' w='100%'>
           <ContactForm fields={fields} formik={formik} isLoading={isLoading} />

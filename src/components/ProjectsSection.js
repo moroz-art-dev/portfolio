@@ -4,7 +4,7 @@ import FullScreenSection from './FullScreenSection';
 import { Box, Heading } from '@chakra-ui/react';
 import ProjectCard from './ProjectCard';
 
-const ProjectsSection = ({ data }) => {
+const ProjectsSection = ({ data: { title, list } }) => {
   return (
     <FullScreenSection
       backgroundColor='primary.30'
@@ -14,19 +14,19 @@ const ProjectsSection = ({ data }) => {
       spacing={8}
     >
       <Heading as='h2' id='projects-section'>
-        Featured Projects
+        {title}
       </Heading>
       <Box
         display='grid'
         gridTemplateColumns='repeat(2,minmax(0,1fr))'
         gridGap={4}
       >
-        {data.map(project => (
+        {list.map(project => (
           <ProjectCard
             key={project.title}
             title={project.title}
             description={project.description}
-            imageSrc={project.getImageSrc()}
+            imagesSrc={project.imagesSrc}
             url={project.url}
           />
         ))}
@@ -36,14 +36,17 @@ const ProjectsSection = ({ data }) => {
 };
 
 ProjectsSection.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      getImageSrc: PropTypes.func.isRequired,
-      url: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    list: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        imagesSrc: PropTypes.arrayOf(PropTypes.func).isRequired,
+        url: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
 };
 
 export default ProjectsSection;
