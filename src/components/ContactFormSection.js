@@ -94,7 +94,12 @@ const ContactFormSection = ({ data: { title } }) => {
       py={16}
       spacing={8}
     >
-      <VStack w='1024px' p={32} alignItems='flex-start'>
+      <VStack
+        w={['360px', '600px', '1024px']}
+        p={8}
+        alignItems='flex-start'
+        mx='auto'
+      >
         <Heading as='h1' id='contact-section'>
           {title}
         </Heading>

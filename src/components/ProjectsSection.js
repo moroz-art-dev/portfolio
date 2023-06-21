@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Heading, SimpleGrid } from '@chakra-ui/react';
 import FullScreenSection from './FullScreenSection';
-import { Box, Heading } from '@chakra-ui/react';
 import ProjectCard from './ProjectCard';
 
 const ProjectsSection = ({ data: { title, list } }) => {
@@ -16,11 +16,7 @@ const ProjectsSection = ({ data: { title, list } }) => {
       <Heading as='h2' id='projects-section'>
         {title}
       </Heading>
-      <Box
-        display='grid'
-        gridTemplateColumns='repeat(2,minmax(0,1fr))'
-        gridGap={4}
-      >
+      <SimpleGrid columns={[1, null, 2]} gap={4}>
         {list.map(project => (
           <ProjectCard
             key={project.title}
@@ -30,7 +26,7 @@ const ProjectsSection = ({ data: { title, list } }) => {
             url={project.url}
           />
         ))}
-      </Box>
+      </SimpleGrid>
     </FullScreenSection>
   );
 };

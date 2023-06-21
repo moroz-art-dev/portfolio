@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading } from '@chakra-ui/react';
+import { Heading, SimpleGrid } from '@chakra-ui/react';
 import FullScreenSection from './FullScreenSection';
 import CertificateCard from './CertificateCard';
 
@@ -16,21 +16,17 @@ const CertificatesSection = ({ data: { title, list } }) => {
       <Heading as='h2' id='certificates-section'>
         {title}
       </Heading>
-      <Box
-        display='grid'
-        gridTemplateColumns='repeat(4,minmax(0,1fr))'
-        gridGap={4}
-      >
-        {list.map(project => (
+      <SimpleGrid columns={[1, 2, 4]} gap={4}>
+        {list.map(certificate => (
           <CertificateCard
-            icon={project.icon}
-            key={project.name}
-            name={project.name}
-            url={project.url}
-            imageSrc={project.getImageSrc()}
+            icon={certificate.icon}
+            key={certificate.name}
+            name={certificate.name}
+            url={certificate.url}
+            imageSrc={certificate.getImageSrc()}
           />
         ))}
-      </Box>
+      </SimpleGrid>
     </FullScreenSection>
   );
 };
