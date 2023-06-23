@@ -40,7 +40,6 @@ const HeaderBox = ({ headerBgColor, children }) => {
 };
 
 HeaderBox.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
   headerBgColor: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };

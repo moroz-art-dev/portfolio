@@ -10,6 +10,7 @@ import CertificatesSection from './components/CertificatesSection';
 import ContactFormSection from './components/ContactFormSection';
 import Footer from './components/Footer';
 import Alert from './components/Alert';
+import ScrollToTop from './components/ScrollToTop';
 
 import dataLanding from './data/landing';
 import dataProjects from './data/projects';
@@ -31,6 +32,7 @@ const App = () => {
         </main>
         <Footer />
         <Alert />
+        <ScrollToTop />
       </AlertProvider>
     </ChakraProvider>
   );
