@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Portfolio - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple developer portfolio project built using React and Chakra UI, implemented with Formik for form handling. It showcases the work, projects, certificates, and contact information of a developer. The portfolio is divided into four sections: Greeting, Projects, Certificates, and Contact Form.
 
-## Available Scripts
+## Sections
 
-In the project directory, you can run:
+### Greeting Section
 
-### `npm start`
+The Greeting section is the first section of the portfolio. It welcomes visitors and provides a brief introduction to the developer. It may include a profile picture, a tagline, and a short description highlighting the developer's skills and expertise.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Projects Section
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Projects section displays a collection of the developer's projects. Each project is represented by a card or tile, providing details such as project name, description, technologies used, and a link to the project's repository or live demo. This section showcases the developer's programming abilities and demonstrates their previous work.
 
-### `npm test`
+### Certificates Section
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Certificates section showcases the developer's certifications and achievements. It can include certificates earned from online courses, workshops, or any other relevant qualifications. Each certificate may be displayed with its name, issuer, and a link to verify its authenticity.
 
-### `npm run build`
+### Contact Form Section
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Contact Form section allows visitors to get in touch with the developer. It includes a form created using Formik, where users can enter their name, email address, and message. This section enables potential clients or collaborators to reach out easily and establish a connection.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd portfolio`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and visit: `http://localhost:3000`
 
-### `npm run eject`
+Feel free to customize the content, styling, and sections according to your preferences and needs. Add your own projects, certificates, and contact information to make it your personalized developer portfolio.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- Chakra UI
+- Formik
+- HTML
+- CSS
+- JavaScript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dev Dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The following dev dependencies were used in the development of this project:
 
-## Learn More
+- [Prettier](https://www.npmjs.com/package/prettier): Code formatter for maintaining consistent code style.
+- [Stylelint](https://www.npmjs.com/package/stylelint): Linter for enforcing consistent CSS styles.
+- [ESLint](https://www.npmjs.com/package/eslint): JavaScript linter for identifying and reporting code errors and enforcing coding styles.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Main](screenshots/screenshot_1.png)
+![Main mobile](screenshots/screenshot_2.png)
 
-### Code Splitting
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project was created by [Your Name]. Feel free to use it as a template for your own developer portfolio. If you have any questions or suggestions, please feel free to reach out.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
