@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.9f4936c8.css",
-    "main.js": "/portfolio/static/js/main.51f5946e.js",
+    "main.js": "/portfolio/static/js/main.1337d368.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/little_lemon_1.png": "/portfolio/static/media/little_lemon_1.2148fb7a046dd56c29d7.png",
     "static/media/little_lemon_4.png": "/portfolio/static/media/little_lemon_4.107a79bf99305ec4a654.png",
     "static/media/little_lemon_2.png": "/portfolio/static/media/little_lemon_2.3b9223c58b0b029a6277.png",
     "static/media/little_lemon_3.png": "/portfolio/static/media/little_lemon_3.63b955d0e60b3260de5b.png",
+    "static/media/live-search.png": "/portfolio/static/media/live-search.f8642bd19617791a34a8.png",
     "static/media/coding_interview_preparation.png": "/portfolio/static/media/coding_interview_preparation.70cb55b70d50c6ed7a32.png",
     "static/media/principles_of_ux_ui_design.png": "/portfolio/static/media/principles_of_ux_ui_design.1bdaa877c626687aa28b.png",
     "static/media/introduction_to_front-end_development.png": "/portfolio/static/media/introduction_to_front-end_development.81fb5ba97d9e487bf1c7.png",
@@ -36,11 +37,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/linkedinIn.svg": "/portfolio/static/media/linkedinIn.bb8ece4a801e8dae2a82e48db59ca7a5.svg",
     "main.9f4936c8.css.map": "/portfolio/static/css/main.9f4936c8.css.map",
-    "main.51f5946e.js.map": "/portfolio/static/js/main.51f5946e.js.map",
+    "main.1337d368.js.map": "/portfolio/static/js/main.1337d368.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f4936c8.css",
-    "static/js/main.51f5946e.js"
+    "static/js/main.1337d368.js"
   ]
 }
