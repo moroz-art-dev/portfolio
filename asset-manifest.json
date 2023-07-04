@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.9f4936c8.css",
-    "main.js": "/portfolio/static/js/main.1337d368.js",
+    "main.js": "/portfolio/static/js/main.1399ab28.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/little_lemon_1.png": "/portfolio/static/media/little_lemon_1.2148fb7a046dd56c29d7.png",
     "static/media/little_lemon_4.png": "/portfolio/static/media/little_lemon_4.107a79bf99305ec4a654.png",
@@ -27,7 +27,7 @@
     "static/media/react.js_essential_training.png": "/portfolio/static/media/react.js_essential_training.d9ee6caaeb094ec7764c.png",
     "static/media/react_-_using_typescript.png": "/portfolio/static/media/react_-_using_typescript.8c9cca69f8a0d4b8b272.png",
     "static/media/learning_graphql.png": "/portfolio/static/media/learning_graphql.f377c4c9f289ff45278c.png",
-    "static/media/codewars.svg": "/portfolio/static/media/codewars.0b0fb19b88b127eba7b65b29f9248b97.svg",
+    "static/media/codewars.svg": "/portfolio/static/media/codewars.4ddfd0a17cb683bcbf821c15c3cdf82e.svg",
     "static/media/ibm.svg": "/portfolio/static/media/ibm.b2a2be0102921c74ba5420e5f666aae3.svg",
     "static/media/slick.svg": "/portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -37,11 +37,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/linkedinIn.svg": "/portfolio/static/media/linkedinIn.bb8ece4a801e8dae2a82e48db59ca7a5.svg",
     "main.9f4936c8.css.map": "/portfolio/static/css/main.9f4936c8.css.map",
-    "main.1337d368.js.map": "/portfolio/static/js/main.1337d368.js.map",
+    "main.1399ab28.js.map": "/portfolio/static/js/main.1399ab28.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f4936c8.css",
-    "static/js/main.1337d368.js"
+    "static/js/main.1399ab28.js"
   ]
 }
