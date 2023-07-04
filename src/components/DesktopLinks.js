@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HStack, Link } from '@chakra-ui/react';
+
 const DesktopLinks = ({ links, linkColor, linkHoverColor, handleClick }) => (
   <HStack spacing={4} display={{ base: 'none', md: 'flex' }}>
     {links.map(link => (
@@ -13,6 +14,7 @@ const DesktopLinks = ({ links, linkColor, linkHoverColor, handleClick }) => (
           textDecoration: 'none',
           color: linkHoverColor,
         }}
+        textTransform='uppercase'
       >
         {link.name}
       </Link>

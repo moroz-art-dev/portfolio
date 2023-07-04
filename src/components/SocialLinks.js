@@ -11,6 +11,7 @@ const SocialLinks = ({ socials, headerTextColor }) => (
         href={social.url}
         target='_blank'
         rel='noopener noreferrer'
+        _hover={{ color: 'primary.40' }}
       >
         {social.fortAwesome ? (
           <FontAwesomeIcon

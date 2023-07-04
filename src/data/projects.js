@@ -19,7 +19,7 @@ const projects = {
       description:
         'The project  is a live search application built with Next.js 13, TypeScript, MUI, and Redux Toolkit.',
       imagesSrc: [() => photo5],
-      url: 'https://live-search-kappa.vercel.app',
+      url: 'https://github.com/moroz-art-dev/live-search',
     },
   ],
 };
