@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Heading, VStack, Box, Text } from '@chakra-ui/react';
 import FullScreenSection from './FullScreenSection';
 
 const LandingSection = ({ data }) => {
   const { introduction, greeting, bio, name, src } = data;
+  const [colorChanged, setColorChanged] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setColorChanged(true);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <FullScreenSection
@@ -29,7 +38,10 @@ const LandingSection = ({ data }) => {
                 key={index}
                 as='span'
                 display='inline'
-                color={`primary.${[30, 40, 50][index % 3]}`}
+                color={
+                  colorChanged ? `white` : `primary.${[30, 40, 50][index % 3]}`
+                }
+                transition='color 0.5s'
               >
                 {letter}
               </Text>
@@ -46,6 +58,7 @@ const LandingSection = ({ data }) => {
             textAlign={['justify', 'justify', 'center']}
             display='inline-block'
             width='fit-content'
+            fontWeight={['normal', 'normal', 'bold']}
           >
             {bio.split('\n').map((line, index) => (
               <React.Fragment key={index}>
