@@ -1,25 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Flex,
-  Heading,
-  HStack,
-  Image,
-  Text,
-  VStack,
-  Box,
-  Link,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-} from '@chakra-ui/react';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Heading, Text, VStack, Box } from '@chakra-ui/react';
+
+import ProjectModal from './ProjectModal';
+import ProjectLinks from './ProjectLinks';
 
 const ProjectCard = ({
   project: { title, description, technologies, imagesSrc, url, demo },
@@ -28,23 +12,13 @@ const ProjectCard = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: selectedImageIndex,
-    cssEase: 'linear',
-    customPaging: () => <div style={{ width: '30px' }} />,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
+  const openModal = () => {
+    setSelectedImageIndex(0);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -58,38 +32,14 @@ const ProjectCard = ({
         bgPosition='top'
         bgRepeat='no-repeat'
         aspectRatio={1}
-        onClick={() => {
-          setSelectedImageIndex(0);
-          setIsModalOpen(true);
-        }}
+        onClick={openModal}
       />
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalBody>
-            <Heading as='h2' size='md' color='gray.800'>
-              {title}
-            </Heading>
-            <Text color='gray.500' textAlign='left'>
-              <strong>Description:</strong> {description}
-            </Text>
-            <Slider
-              {...settings}
-              style={{ maxWidth: '100%', maxHeight: '100%' }}
-            >
-              {imagesSrc.map((getImageSrc, index) => (
-                <Image
-                  key={index}
-                  borderRadius='xl'
-                  src={imageBaseUrl + getImageSrc}
-                  alt={title}
-                  style={{ maxWidth: '100%', maxHeight: '50%' }}
-                />
-              ))}
-            </Slider>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <ProjectModal
+        project={{ title, description, imagesSrc }}
+        imageBaseUrl={imageBaseUrl}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
       <VStack mt={4} alignItems='flex-start'>
         <Heading as='h2' size='md' color='gray.800'>
           {title}
@@ -102,24 +52,7 @@ const ProjectCard = ({
         <Text color='gray.500' textAlign='left'>
           <strong>Technologies:</strong> {technologies}
         </Text>
-        <Flex justify='space-between' width='100%'>
-          <Link href={url} isExternal color='primary.20'>
-            <HStack spacing={2} align='center'>
-              <Text textAlign={['left', 'center']} fontWeight='bold'>
-                GitHub Project
-              </Text>
-              <FontAwesomeIcon icon={faGithubSquare} size='lg' />
-            </HStack>
-          </Link>
-          <Link href={demo} isExternal color='primary.20'>
-            <HStack spacing={2} align='center'>
-              <Text textAlign={['right', 'center']} fontWeight='bold'>
-                Demo
-              </Text>
-              <FontAwesomeIcon icon={faPlayCircle} size='lg' />
-            </HStack>
-          </Link>
-        </Flex>
+        <ProjectLinks url={url} demo={demo} />
       </VStack>
     </Box>
   );
@@ -130,7 +63,6 @@ ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     technologies: PropTypes.string.isRequired,
-    imagesSubcategorySrc: PropTypes.string.isRequired,
     imagesSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
     url: PropTypes.string.isRequired,
     demo: PropTypes.string.isRequired,
