@@ -1,5 +1,7 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
 import theme from './theme/theme';
 import { AlertProvider } from './context/alertContext';
@@ -12,28 +14,23 @@ import Footer from './components/Footer';
 import Alert from './components/Alert';
 import ScrollToTop from './components/ScrollToTop';
 
-import dataLanding from './data/landing';
-import dataProjects from './data/projects';
-import dataCertificates from './data/certificates';
-import links from './data/links';
-import socials from './data/socials';
-import dataContacts from './data/contacts';
-
 const App = () => {
   return (
     <ChakraProvider theme={theme}>
-      <AlertProvider>
-        <Header socials={socials} links={links} />
-        <main>
-          <LandingSection data={dataLanding} />
-          <ProjectsSection data={dataProjects} />
-          <CertificatesSection data={dataCertificates} />
-          <ContactFormSection data={dataContacts} />
-        </main>
-        <Footer />
-        <Alert />
-        <ScrollToTop />
-      </AlertProvider>
+      <Provider store={store}>
+        <AlertProvider>
+          <Header />
+          <main>
+            <LandingSection />
+            <ProjectsSection />
+            <CertificatesSection />
+            <ContactFormSection />
+          </main>
+          <Footer />
+          <Alert />
+          <ScrollToTop />
+        </AlertProvider>
+      </Provider>
     </ChakraProvider>
   );
 };

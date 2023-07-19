@@ -7,8 +7,6 @@ import DesktopLinks from './DesktopLinks';
 import MobileMenu from './MobileMenu';
 
 const HeaderContent = ({
-  socials,
-  links,
   headerTextColor,
   linkColor,
   linkHoverColor,
@@ -20,15 +18,13 @@ const HeaderContent = ({
     alignItems='center'
     justifyContent='space-between'
   >
-    <SocialLinks socials={socials} headerTextColor={headerTextColor} />
+    <SocialLinks headerTextColor={headerTextColor} />
     <DesktopLinks
-      links={links}
       linkColor={linkColor}
       linkHoverColor={linkHoverColor}
       handleClick={handleClick}
     />
     <MobileMenu
-      links={links}
       linkColor={linkColor}
       linkHoverColor={linkHoverColor}
       handleClick={handleClick}
@@ -37,8 +33,6 @@ const HeaderContent = ({
 );
 
 HeaderContent.propTypes = {
-  socials: PropTypes.array.isRequired,
-  links: PropTypes.array.isRequired,
   headerTextColor: PropTypes.string.isRequired,
   linkColor: PropTypes.string.isRequired,
   linkHoverColor: PropTypes.string.isRequired,

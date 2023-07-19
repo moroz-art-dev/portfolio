@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { Avatar, Heading, VStack, Box, Text } from '@chakra-ui/react';
 import FullScreenSection from './FullScreenSection';
+import { useSelector } from 'react-redux';
 
-const LandingSection = ({ data }) => {
+const LandingSection = () => {
+  const data = useSelector(state => state.landing);
   const { introduction, greeting, bio, name, src } = data;
   const [colorChanged, setColorChanged] = useState(false);
 
@@ -71,16 +72,6 @@ const LandingSection = ({ data }) => {
       </VStack>
     </FullScreenSection>
   );
-};
-
-LandingSection.propTypes = {
-  data: PropTypes.shape({
-    introduction: PropTypes.string.isRequired,
-    greeting: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default LandingSection;

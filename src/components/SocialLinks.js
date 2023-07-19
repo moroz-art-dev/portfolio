@@ -1,34 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HStack, Link } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSelector } from 'react-redux';
+import Icon from './Icon';
 
-const SocialLinks = ({ socials, headerTextColor }) => (
-  <HStack spacing={4}>
-    {socials.map(social => (
-      <Link
-        key={social.url}
-        href={social.url}
-        target='_blank'
-        rel='noopener noreferrer'
-        _hover={{ color: 'primary.40' }}
-      >
-        {social.fortAwesome ? (
-          <FontAwesomeIcon
-            icon={social.icon}
-            size='lg'
-            color={headerTextColor}
-          />
-        ) : (
-          social.icon
-        )}
-      </Link>
-    ))}
-  </HStack>
-);
+const SocialLinks = ({ headerTextColor }) => {
+  const socials = useSelector(state => state.socials);
+  return (
+    <HStack spacing={4}>
+      {socials.map(social => (
+        <Link
+          key={social.url}
+          href={social.url}
+          target='_blank'
+          rel='noopener noreferrer'
+          _hover={{ color: 'primary.40' }}
+        >
+          {social.icon && (
+            <Icon
+              fortAwesome={social.fortAwesome}
+              icon={social.icon}
+              size='lg'
+              color={headerTextColor}
+            />
+          )}
+        </Link>
+      ))}
+    </HStack>
+  );
+};
 
 SocialLinks.propTypes = {
-  socials: PropTypes.array.isRequired,
   headerTextColor: PropTypes.string.isRequired,
 };
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useColorModeValue } from '@chakra-ui/react';
 
 import HeaderContent from './HeaderContent';
 import HeaderBox from './HeaderBox';
 
-const Header = ({ socials, links }) => {
+const Header = () => {
   const handleClick = anchor => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -26,8 +25,6 @@ const Header = ({ socials, links }) => {
     <header>
       <HeaderBox headerBgColor={headerBgColor}>
         <HeaderContent
-          socials={socials}
-          links={links}
           headerTextColor={headerTextColor}
           linkColor={linkColor}
           linkHoverColor={linkHoverColor}
@@ -36,24 +33,6 @@ const Header = ({ socials, links }) => {
       </HeaderBox>
     </header>
   );
-};
-
-Header.propTypes = {
-  socials: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.oneOfType([PropTypes.element, PropTypes.object])
-        .isRequired,
-      fortAwesome: PropTypes.bool.isRequired,
-      url: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default Header;

@@ -10,8 +10,11 @@ import {
 } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
-const MobileMenu = ({ links, linkColor, linkHoverColor, handleClick }) => {
+const MobileMenu = ({ linkColor, linkHoverColor, handleClick }) => {
+  const links = useSelector(state => state.links);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -45,7 +48,6 @@ const MobileMenu = ({ links, linkColor, linkHoverColor, handleClick }) => {
 };
 
 MobileMenu.propTypes = {
-  links: PropTypes.array.isRequired,
   linkColor: PropTypes.string.isRequired,
   linkHoverColor: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,

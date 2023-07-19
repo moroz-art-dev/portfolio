@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import {
   Box,
@@ -14,8 +13,12 @@ import useSubmit from '../hooks/useSubmit';
 import FullScreenSection from './FullScreenSection';
 import ContactForm from './ContactForm';
 import * as Yup from 'yup';
+import { useSelector } from 'react-redux';
 
-const ContactFormSection = ({ data: { title } }) => {
+const ContactFormSection = () => {
+  const contacts = useSelector(state => state.contacts);
+  const { title } = contacts;
+
   const { isLoading, response, submit } = useSubmit();
   const fields = [
     {
@@ -80,12 +83,6 @@ const ContactFormSection = ({ data: { title } }) => {
       }
     }
   }, [response]);
-
-  ContactFormSection.propTypes = {
-    data: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-    }).isRequired,
-  };
 
   return (
     <FullScreenSection
