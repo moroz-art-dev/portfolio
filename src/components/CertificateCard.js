@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import Icon from './Icon';
 
 const CertificateCard = ({ name, url, imageSrc, icon }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -53,6 +54,7 @@ const CertificateCard = ({ name, url, imageSrc, icon }) => {
         <Link href={url} isExternal color='primary.20'>
           <HStack spacing={2} align='center' justify='center'>
             {icon}
+            <Icon icon={icon} fortAwesome={false} />
             <Text textAlign={['left', 'center']} fontWeight='bold'>
               See more
             </Text>
@@ -75,7 +77,7 @@ const CertificateCard = ({ name, url, imageSrc, icon }) => {
 };
 
 CertificateCard.propTypes = {
-  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
+  icon: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   imageSrc: PropTypes.string.isRequired,

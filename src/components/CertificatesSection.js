@@ -1,10 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Heading, SimpleGrid } from '@chakra-ui/react';
 import FullScreenSection from './FullScreenSection';
 import CertificateCard from './CertificateCard';
+import { useSelector } from 'react-redux';
+import useCertificates from '../hooks/useCertificates';
 
-const CertificatesSection = ({ data: { title, list } }) => {
+const CertificatesSection = () => {
+  useCertificates();
+
+  const data = useSelector(state => state.certificates.data);
+  const { title, list, imageBaseUrl } = data;
+
   return (
     <FullScreenSection
       backgroundColor='primary.40'
@@ -17,32 +23,19 @@ const CertificatesSection = ({ data: { title, list } }) => {
         {title}
       </Heading>
       <SimpleGrid columns={[1, 2, 4]} gap={4}>
-        {list.map(certificate => (
-          <CertificateCard
-            icon={certificate.icon}
-            key={certificate.name}
-            name={certificate.name}
-            url={certificate.url}
-            imageSrc={certificate.getImageSrc()}
-          />
-        ))}
+        {list &&
+          list.map(certificate => (
+            <CertificateCard
+              icon={certificate.icon}
+              key={certificate.name}
+              name={certificate.name}
+              url={certificate.url}
+              imageSrc={imageBaseUrl + certificate.imageSrc}
+            />
+          ))}
       </SimpleGrid>
     </FullScreenSection>
   );
-};
-
-CertificatesSection.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    list: PropTypes.arrayOf(
-      PropTypes.shape({
-        icon: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
-        name: PropTypes.string.isRequired,
-        getImageSrc: PropTypes.func.isRequired,
-        url: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
 };
 
 export default CertificatesSection;
