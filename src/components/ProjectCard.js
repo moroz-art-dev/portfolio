@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Heading, Text, VStack, Box } from '@chakra-ui/react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ProjectModal from './ProjectModal';
 import ProjectLinks from './ProjectLinks';
@@ -25,15 +26,22 @@ const ProjectCard = ({
     <Box borderRadius='xl' bg='primary.50' p={4} shadow='md'>
       <Box
         cursor='pointer'
-        _hover={{ opacity: 0.8 }}
         borderRadius='xl'
-        bg={`url(${imageBaseUrl}${imagesSrc[selectedImageIndex]})`}
-        bgSize='cover'
-        bgPosition='top'
-        bgRepeat='no-repeat'
-        aspectRatio={1}
+        aspectRatio='1'
+        overflow='hidden'
         onClick={openModal}
-      />
+      >
+        <LazyLoadImage
+          src={imageBaseUrl + imagesSrc[selectedImageIndex]}
+          alt={title}
+          effect='blur'
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
+      </Box>
       <ProjectModal
         project={{ title, description, imagesSrc }}
         imageBaseUrl={imageBaseUrl}

@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useGetProjectsQuery } from '../services/dataApi';
 import {
-  setProjects,
-  setLoading,
   setError,
+  setLoading,
+  setProjects,
 } from '../redux/features/projectsSlice';
+import { useGetProjectsQuery } from '../services/dataApi';
 
 const useProjects = () => {
   const dispatch = useDispatch();

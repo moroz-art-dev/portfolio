@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useGetCertificatesQuery } from '../services/dataApi';
 import {
   setCertificates,
-  setLoading,
   setError,
+  setLoading,
 } from '../redux/features/certificatesSlice';
+import { useGetCertificatesQuery } from '../services/dataApi';
 
 const useCertificates = () => {
   const dispatch = useDispatch();

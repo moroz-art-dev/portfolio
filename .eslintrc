@@ -2,6 +2,7 @@
   "extends": ["react-app", "react-app/jest"],
   "plugins": ["prettier"],
   "rules": {
+    "import/no-unresolved": "error",
     "prettier/prettier": 2,
     "import/order": [
       2,
