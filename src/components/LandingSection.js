@@ -1,7 +1,8 @@
+import { Avatar, Box, Heading, Text, VStack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { Avatar, Heading, VStack, Box, Text } from '@chakra-ui/react';
-import FullScreenSection from './FullScreenSection';
 import { useSelector } from 'react-redux';
+
+import FullScreenSection from './FullScreenSection';
 
 const LandingSection = () => {
   const data = useSelector(state => state.landing);

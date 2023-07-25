@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ReactComponent as Ibm } from '../assets/ibm.svg';
-import { ReactComponent as Meta } from '../assets/meta.svg';
-import { ReactComponent as LinkedinIn } from '../assets/linkedinIn.svg';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { ReactComponent as CodeWars } from '../assets/codewars.svg';
+import { ReactComponent as Ibm } from '../assets/ibm.svg';
+import { ReactComponent as LinkedinIn } from '../assets/linkedinIn.svg';
+import { ReactComponent as Meta } from '../assets/meta.svg';
 
 const Icon = ({ fortAwesome, icon, size, color }) => {
   let iconComponent;

@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { Box } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 const HeaderBox = ({ headerBgColor, children }) => {
   const headerBox = useRef(null);
   const prevScrollPos = useRef(0);

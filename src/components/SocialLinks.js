@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { HStack, Link } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 import Icon from './Icon';
 
 const SocialLinks = ({ headerTextColor }) => {

@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Button,
   FormControl,
@@ -8,6 +6,8 @@ import {
   Textarea,
   VStack,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const ContactForm = ({ fields, formik, isLoading }) => {
   return (

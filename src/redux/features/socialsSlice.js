@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { initialSocials } from '../initialState';
 
 const socialsSlice = createSlice({

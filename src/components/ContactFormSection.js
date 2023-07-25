@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
-import { useFormik } from 'formik';
 import {
   Box,
   Heading,
-  VStack,
   Input,
   Select,
   Textarea,
+  VStack,
 } from '@chakra-ui/react';
+import { useFormik } from 'formik';
+import React, { useEffect } from 'react';
+
+import { useSelector } from 'react-redux';
+import * as Yup from 'yup';
+
+import ContactForm from './ContactForm';
+import FullScreenSection from './FullScreenSection';
+
 import { useAlertContext } from '../context/alertContext';
 import useSubmit from '../hooks/useSubmit';
-import FullScreenSection from './FullScreenSection';
-import ContactForm from './ContactForm';
-import * as Yup from 'yup';
-import { useSelector } from 'react-redux';
 
 const ContactFormSection = () => {
   const contacts = useSelector(state => state.contacts);

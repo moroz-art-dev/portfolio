@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { initialLanding } from '../initialState';
 
 const landingSlice = createSlice({

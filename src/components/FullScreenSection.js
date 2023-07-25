@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { VStack } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const FullScreenSection = ({ children, isDarkBackground, ...boxProps }) => {
   return (

@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Heading,
   Image,
-  Text,
   Modal,
-  ModalOverlay,
-  ModalContent,
   ModalBody,
+  ModalContent,
+  ModalOverlay,
+  Text,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 const ProjectModal = ({ project, imageBaseUrl, isOpen, onClose }) => {
   const { title, description, imagesSrc } = project;

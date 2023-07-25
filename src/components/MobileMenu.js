@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import {
   Box,
+  IconButton,
   Menu,
   MenuButton,
-  MenuList,
   MenuItem,
-  IconButton,
+  MenuList,
 } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const MobileMenu = ({ linkColor, linkHoverColor, handleClick }) => {

@@ -1,8 +1,11 @@
-import React from 'react';
 import { Heading, SimpleGrid } from '@chakra-ui/react';
-import FullScreenSection from './FullScreenSection';
-import CertificateCard from './CertificateCard';
+import React from 'react';
+
 import { useSelector } from 'react-redux';
+
+import CertificateCard from './CertificateCard';
+import FullScreenSection from './FullScreenSection';
+
 import useCertificates from '../hooks/useCertificates';
 
 const CertificatesSection = () => {

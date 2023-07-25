@@ -12,7 +12,14 @@ export const dataApi = createApi({
     getProjects: builder.query({
       query: () => 'projects/data.json',
     }),
+    getStack: builder.query({
+      query: () => 'stack/data.json',
+    }),
   }),
 });
 
-export const { useGetCertificatesQuery, useGetProjectsQuery } = dataApi;
+export const {
+  useGetCertificatesQuery,
+  useGetProjectsQuery,
+  useGetStackQuery,
+} = dataApi;

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Box } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import SocialLinks from './SocialLinks';
 import DesktopLinks from './DesktopLinks';
 import MobileMenu from './MobileMenu';
+import SocialLinks from './SocialLinks';
 
 const HeaderContent = ({
   headerTextColor,

@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   AlertDialog,
   AlertDialogBody,
@@ -6,8 +5,9 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
 } from '@chakra-ui/react';
+import React, { useRef } from 'react';
+
 import { useAlertContext } from '../context/alertContext';
-import { useRef } from 'react';
 
 function Alert() {
   const { isOpen, type, message, onClose } = useAlertContext();

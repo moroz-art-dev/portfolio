@@ -1,22 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import {
-  setCertificates,
-  setError,
-  setLoading,
-} from '../redux/features/certificatesSlice';
-import { useGetCertificatesQuery } from '../services/dataApi';
+import { setError, setLoading, setStack } from '../redux/features/stackSlice';
+import { useGetStackQuery } from '../services/dataApi';
 
-const useCertificates = () => {
+const useStack = () => {
   const dispatch = useDispatch();
-  const { data, isLoading, isError, error } = useGetCertificatesQuery();
+  const { data, isLoading, isError, error } = useGetStackQuery();
 
   useEffect(() => {
     dispatch(setLoading());
 
     if (data) {
-      dispatch(setCertificates(data));
+      dispatch(setStack(data));
     }
 
     if (isError) {
@@ -27,4 +23,4 @@ const useCertificates = () => {
   return { data, isLoading, isError, error };
 };
 
-export default useCertificates;
+export default useStack;

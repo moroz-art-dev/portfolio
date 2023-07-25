@@ -1,5 +1,5 @@
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const initialSocials = [
   {
@@ -36,6 +36,11 @@ export const initialLinks = [
     name: 'Certificates',
     id: 'certificates',
     url: '#certificates',
+  },
+  {
+    name: 'Stack',
+    id: 'stack',
+    url: '#stack',
   },
   {
     name: 'Contact Me',

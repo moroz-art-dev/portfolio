@@ -1,8 +1,8 @@
-import React from 'react';
 import { useColorModeValue } from '@chakra-ui/react';
+import React from 'react';
 
-import HeaderContent from './HeaderContent';
 import HeaderBox from './HeaderBox';
+import HeaderContent from './HeaderContent';
 
 const Header = () => {
   const handleClick = anchor => () => {

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import { Heading, Text, VStack, Box } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import ProjectModal from './ProjectModal';
 import ProjectLinks from './ProjectLinks';
+import ProjectModal from './ProjectModal';
 
 const ProjectCard = ({
   project: { title, description, technologies, imagesSrc, url, demo },

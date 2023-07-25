@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Flex, HStack, Text, Link } from '@chakra-ui/react';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { Flex, HStack, Link, Text } from '@chakra-ui/react';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const ProjectLinks = ({ url, demo }) => (
   <Flex justify='space-between' width='100%'>
