@@ -42,12 +42,13 @@ const SkillSection = ({ sectionTitle, sectionData, imageBaseUrl, nested }) => {
               />
             ) : (
               <>
-                {typeof value === 'string' && (
+                {typeof value === 'string' && value !== 'true' && (
                   <LazyLoadImage
                     style={{ height: 30, width: 'auto', marginRight: '8px' }}
                     src={imageBaseUrl + value}
                     alt={key}
                     effect='blur'
+                    height={'30'}
                   />
                 )}
                 <Box as='span'>{key}</Box>

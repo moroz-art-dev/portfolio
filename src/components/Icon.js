@@ -6,6 +6,7 @@ import { ReactComponent as CodeWars } from '../assets/codewars.svg';
 import { ReactComponent as Ibm } from '../assets/ibm.svg';
 import { ReactComponent as LinkedinIn } from '../assets/linkedinIn.svg';
 import { ReactComponent as Meta } from '../assets/meta.svg';
+import { ReactComponent as Scrimba } from '../assets/scrimba.svg';
 
 const Icon = ({ fortAwesome, icon, size, color }) => {
   let iconComponent;
@@ -20,6 +21,8 @@ const Icon = ({ fortAwesome, icon, size, color }) => {
     iconComponent = <Meta />;
   } else if (icon === 'LinkedinIn') {
     iconComponent = <LinkedinIn />;
+  } else if (icon === 'Scrimba') {
+    iconComponent = <Scrimba />;
   }
 
   return iconComponent;

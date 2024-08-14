@@ -41,11 +41,12 @@ const CertificateCard = ({ name, url, imageSrc, icon }) => {
       _hover={{ opacity: 0.8 }}
     >
       <LazyLoadImage
+        height={'192'}
         src={imageSrc}
         alt={name}
         effect='blur'
         onClick={openModal}
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: 'pointer', height: 192, width: 'auto' }}
       />
 
       <VStack mt={4} alignItems='flex-start'>

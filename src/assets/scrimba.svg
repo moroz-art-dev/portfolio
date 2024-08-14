@@ -1,0 +1,10 @@
+<svg width="35" height="12" fill="none">
+  <g fill="#667EEA" clip-path="url(#a)">
+    <path d="M5.767 6H0v5.767h11.534V6H17.3V.233H5.767V6ZM34.601.233h-5.767V6h-5.767v5.767h11.534V.233Z"></path>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#667EEA" d="M0 .059h134.735v11.883H0z"></path>
+    </clipPath>
+  </defs>
+</svg>
