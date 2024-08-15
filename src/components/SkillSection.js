@@ -10,52 +10,62 @@ const SkillSection = ({ sectionTitle, sectionData, imageBaseUrl, nested }) => {
         borderRadius: 'xl',
         bg: 'primary.50',
         p: 4,
-        shadow: 'md',
-        pb: 0,
       };
 
-  const headingType = nested ? 'h4' : 'h3';
+  const headingType = nested ? 'p' : 'h3';
+
+  const renderSkillItem = (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      return (
+        <SkillSection
+          key={key}
+          sectionTitle={key}
+          sectionData={value}
+          imageBaseUrl={imageBaseUrl}
+          nested
+        />
+      );
+    }
+
+    return (
+      <Box key={key} display='flex' alignItems='center' mr={4} mb={4}>
+        {typeof value === 'string' && value !== 'false' ? (
+          <>
+            <LazyLoadImage
+              style={{ height: 30, width: 'auto', marginRight: '8px' }}
+              src={imageBaseUrl + value}
+              alt={key}
+              effect='blur'
+              height={'30'}
+              title={key}
+            />
+            <Box as='span'>{key}</Box>
+          </>
+        ) : (
+          <Box as='span'>{key}</Box>
+        )}
+      </Box>
+    );
+  };
 
   return (
-    <Box {...style}>
-      {sectionTitle !== '' && (
+    <Box
+      {...style}
+      style={{
+        display: 'flex',
+        flexDirection: nested ? 'row' : 'column',
+      }}
+      mb={4}
+    >
+      {sectionTitle && sectionTitle.length > 2 && (
         <Heading as={headingType} size='md' mb={4}>
           {sectionTitle}
         </Heading>
       )}
       <Flex flexWrap='wrap'>
-        {Object.entries(sectionData).map(([key, value]) => (
-          <Box
-            key={key}
-            as='article'
-            display='flex'
-            alignItems='center'
-            mr={4}
-            mb={4}
-          >
-            {typeof value === 'object' ? (
-              <SkillSection
-                sectionTitle={key}
-                sectionData={value}
-                imageBaseUrl={imageBaseUrl}
-                nested
-              />
-            ) : (
-              <>
-                {typeof value === 'string' && value !== 'true' && (
-                  <LazyLoadImage
-                    style={{ height: 30, width: 'auto', marginRight: '8px' }}
-                    src={imageBaseUrl + value}
-                    alt={key}
-                    effect='blur'
-                    height={'30'}
-                  />
-                )}
-                <Box as='span'>{key}</Box>
-              </>
-            )}
-          </Box>
-        ))}
+        {Object.entries(sectionData).map(([key, value]) =>
+          renderSkillItem(key, value)
+        )}
       </Flex>
     </Box>
   );

@@ -13,7 +13,7 @@ export const dataApi = createApi({
       query: () => 'projects/data.json',
     }),
     getStack: builder.query({
-      query: () => 'stack/data.json',
+      query: () => 'stack/data_v1.json',
     }),
   }),
 });
